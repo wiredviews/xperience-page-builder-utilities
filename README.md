@@ -28,7 +28,7 @@ This package is compatible with ASP.NET Core 3.1 -> ASP.NET Core 5 and is design
 1. Include the tag builder namespace in the `~/Views/_ViewImports.cshtml`
 
     ```html
-    @addTagHelper *, XperienceCommunity.PageBuilderModeTageHelper
+    @addTagHelper *, XperienceCommunity.PageBuilderModeTagHelper
     ```
 
 1. Use the tag helper in your Razor views
