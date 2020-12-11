@@ -21,7 +21,7 @@ This package is compatible with ASP.NET Core 3.1 -> ASP.NET Core 5 and is design
     ```csharp
     public void ConfigureServices(IServiceCollection services)
     {
-        services.AddSingleton<IPageBuilderContext, XperiencePageBuilderContext>)();
+        services.AddSingleton<IPageBuilderContext, XperiencePageBuilderContext>();
     }
     ```
 
