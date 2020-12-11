@@ -28,7 +28,7 @@ This package is compatible with ASP.NET Core 3.1 -> ASP.NET Core 5 and is design
 1. Include the tag builder namespace in the `~/Views/_ViewImports.cshtml`
 
     ```html
-    @addTagHelper *, Xperience.PageBuilderModeTageHelper
+    @addTagHelper *, XperienceCommunity.PageBuilderModeTageHelper
     ```
 
 1. Use the tag helper in your Razor views
@@ -48,6 +48,43 @@ This package is compatible with ASP.NET Core 3.1 -> ASP.NET Core 5 and is design
         <!-- will be displayed in Edit and LivePreview modes -->
         <h1>Hello!</h1>
     </page-builder-mode>
+    ```
+
+1. You can also use the `IPageBuilderContext` as a constructor dependency elsewhere in your application to more easily determine the state of the current request, without having to use `IHttpContextAccessor` and all the Kentico Xperience extension methods:
+
+    ```csharp
+    public class ProductsController
+    {
+        private readonly IPageBuilderContext context;
+
+        public ProductsController(IPageBuilderContext context)
+        {
+            this.context = context ?? throw new ArgumentNullException(nameof(context));
+        }
+
+        public ActionResult Index()
+        {
+            if (context.IsEditMode)
+            {
+                // ...
+            }
+            
+            if (context.IsLivePreviewMode)
+            {
+                // ...
+            }
+            
+            if (context.IsLiveMode)
+            {
+                // ...
+            }
+
+            if (context.IsPreviewMode)
+            {
+                // ...
+            }
+        }
+    }
     ```
 
 ## References

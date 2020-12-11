@@ -1,4 +1,4 @@
-namespace Xperience.PageBuilderModeTagHelper
+namespace XperienceCommunity.PageBuilderModeTagHelper
 {
     /// <summary>
     /// Abstraction for the current request's page builder environment
@@ -6,19 +6,19 @@ namespace Xperience.PageBuilderModeTagHelper
     public interface IPageBuilderContext
     {
         /// <summary>
-        /// True if either <see cref="IsLivePreview"/> or <see cref="IsEditMode"/> is true. Also the opposite of <see cref="IsLiveMode"/>
+        /// True if either <see cref="IsLivePreviewMode"/> or <see cref="IsEditMode"/> is true. Also the opposite of <see cref="IsLiveMode"/>
         /// </summary>
         bool IsPreviewMode { get; }
 
         /// <summary>
-        /// True if <see cref="IsLivePreview"/> and <see cref="IsEditMode"/> is false. Also the opposite of <see cref="IsPreviewMode"/>
+        /// True if <see cref="IsLivePreviewMode"/> and <see cref="IsEditMode"/> is false. Also the opposite of <see cref="IsPreviewMode"/>
         /// </summary>
         bool IsLiveMode { get; }
 
         /// <summary>
         /// True if the current request is being made for a preview version of the Page with editing disabled
         /// </summary>
-        bool IsLivePreview { get; }
+        bool IsLivePreviewMode { get; }
 
         /// <summary>
         /// True if the current request is being made for the Page Builder experience

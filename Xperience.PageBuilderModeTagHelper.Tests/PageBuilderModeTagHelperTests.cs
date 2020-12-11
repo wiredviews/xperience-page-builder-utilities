@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 using NSubstitute;
 using Xunit;
 
-namespace Xperience.PageBuilderModeTagHelper.Tests
+namespace XperienceCommunity.PageBuilderModeTagHelper.Tests
 {
     public class PageBuilderModeTagHelperTests
     {
@@ -185,7 +185,7 @@ namespace Xperience.PageBuilderModeTagHelper.Tests
             if (modeName == "Live")
             {
                 context.IsLiveMode.Returns(true);
-                context.IsLivePreview.Returns(false);
+                context.IsLivePreviewMode.Returns(false);
                 context.IsEditMode.Returns(false);
                 context.Mode.Returns(PageBuilderMode.Live);
 
@@ -195,7 +195,7 @@ namespace Xperience.PageBuilderModeTagHelper.Tests
             if (modeName == "LivePreview")
             {
                 context.IsLiveMode.Returns(false);
-                context.IsLivePreview.Returns(true);
+                context.IsLivePreviewMode.Returns(true);
                 context.IsEditMode.Returns(false);
                 context.Mode.Returns(PageBuilderMode.LivePreview);
 
@@ -205,7 +205,7 @@ namespace Xperience.PageBuilderModeTagHelper.Tests
             if (modeName == "Edit")
             {
                 context.IsLiveMode.Returns(false);
-                context.IsLivePreview.Returns(false);
+                context.IsLivePreviewMode.Returns(false);
                 context.IsEditMode.Returns(true);
                 context.Mode.Returns(PageBuilderMode.Edit);
 

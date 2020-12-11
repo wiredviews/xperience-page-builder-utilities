@@ -1,12 +1,8 @@
 ﻿using System;
-using Kentico.Content.Web.Mvc;
-using Kentico.PageBuilder.Web.Mvc;
-using Kentico.Web.Mvc;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Microsoft.Extensions.Primitives;
 
-namespace Xperience.PageBuilderModeTagHelper
+namespace XperienceCommunity.PageBuilderModeTagHelper
 {
     /// <summary>
     /// <see cref="ITagHelper"/> implementation targeting &lt;page-builder-mode&gt; elements that conditionally renders
