@@ -28,17 +28,12 @@ This package is compatible with ASP.NET Core 3.1 -> ASP.NET Core 5 and is design
 1. Include the tag builder namespace in the `~/Views/_ViewImports.cshtml`
 
     ```html
-    @addTagHelper *, XperienceCommunity.PageBuilderModeTagHelper
+    @addTagHelper *, Xperience.PageBuilderModeTagHelper
     ```
 
 1. Use the tag helper in your Razor views
 
     ```html
-    <page-builder-mode modes="Live">
-        <!-- will only be displayed on the live site -->
-        <h1>Hello!</h1>
-    </page-builder-mode>
-
     <page-builder-mode exclude="Live">
         <!-- will be displayed in Edit and LivePreview modes -->
         <h1>Hello!</h1>
