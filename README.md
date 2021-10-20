@@ -1,8 +1,9 @@
-# Xperience Page Builder Mode Tag Helper
+# Xperience Page Builder Tag Helpers
 
-[![NuGet Package](https://img.shields.io/nuget/v/XperienceCommunity.PageBuilderModeTagHelper.svg)](https://www.nuget.org/packages/XperienceCommunity.PageBuilderModeTagHelper)
+[![NuGet Package](https://img.shields.io/nuget/v/XperienceCommunity.PageBuilderUtilities.svg)](https://www.nuget.org/packages/XperienceCommunity.PageBuilderUtilities)
+[![NuGet Package](https://img.shields.io/nuget/v/XperienceCommunity.PageBuilderTagHelpers.svg)](https://www.nuget.org/packages/XperienceCommunity.PageBuilderTagHelpers)
 
-This library provides an [ASP.NET Core Tag Helper](https://docs.microsoft.com/en-US/aspnet/core/mvc/views/tag-helpers/intro?view=aspnetcore-3.1) for [Kentico Xperience 13.0](https://docs.xperience.io/developing-websites/developing-xperience-applications-using-asp-net-core/reference-xperience-tag-helpers) that adds to the existing set.
+This library provides an [ASP.NET Core Tag Helper](https://docs.microsoft.com/en-US/aspnet/core/mvc/views/tag-helpers/intro?view=aspnetcore-3.1) for [Kentico Xperience 13.0](https://docs.xperience.io/developing-websites/developing-xperience-applications-using-asp-net-core/reference-xperience-tag-helpers) to help toggle HTML in Razor views based on the Page Builder 'mode' of the request to the ASP.NET Core application.
 
 ## Dependencies
 
@@ -13,7 +14,7 @@ This package is compatible with ASP.NET Core 3.1 -> ASP.NET Core 5 and is design
 1. First, install the NuGet package in your ASP.NET Core project
 
     ```bash
-    dotnet add package XperienceCommunity.PageBuilderModeTagHelper
+    dotnet add package XperienceCommunity.PageBuilderTagHelpers
     ```
 
 1. Add the required types to the DI container in your `Startup.cs` file
@@ -21,14 +22,16 @@ This package is compatible with ASP.NET Core 3.1 -> ASP.NET Core 5 and is design
     ```csharp
     public void ConfigureServices(IServiceCollection services)
     {
-        services.AddSingleton<IPageBuilderContext, XperiencePageBuilderContext>();
+        services.AddPageBuilderContext();
     }
     ```
+
+    - _Note_: This extension method comes from the `XperienceCommunity.PageBuilderUtilities` package which is a dependency of `XperienceCommunity.PageBuilderTagHelpers`
 
 1. Include the tag builder namespace in the `~/Views/_ViewImports.cshtml`
 
     ```html
-    @addTagHelper *, Xperience.PageBuilderModeTagHelper
+    @addTagHelper *, XperienceCommunity.PageBuilderTagHelpers
     ```
 
 1. Use the tag helper in your Razor views
@@ -45,7 +48,7 @@ This package is compatible with ASP.NET Core 3.1 -> ASP.NET Core 5 and is design
     </page-builder-mode>
     ```
 
-1. You can also use the `IPageBuilderContext` as a constructor dependency elsewhere in your application to more easily determine the state of the current request, without having to use `IHttpContextAccessor` and all the Kentico Xperience extension methods:
+1. You can also use the `IPageBuilderContext` from `XperienceCommunity.PageBuilderUtilities` as a constructor dependency elsewhere in your application to more easily determine the state of the current request, without having to use `IHttpContextAccessor` and all the Kentico Xperience extension methods. This is both easier to mock in a unit test and easier to read in your code:
 
     ```csharp
     public class ProductsController
@@ -81,6 +84,12 @@ This package is compatible with ASP.NET Core 3.1 -> ASP.NET Core 5 and is design
         }
     }
     ```
+
+    - _Note_: If you only want to use the `IPageBuilderContext`, you can install its package directly:
+
+        ```bash
+        dotnet add package XperienceCommunity.PageBuilderUtilities
+        ```
 
 ## References
 

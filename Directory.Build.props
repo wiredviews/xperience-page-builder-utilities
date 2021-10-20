@@ -6,14 +6,12 @@
 		<Authors>$(Company)</Authors>
 		<Copyright>Copyright © $(Company) $([System.DateTime]::Now.Year)</Copyright>
 		<Trademark>$(Company)™</Trademark>
-		<Product>XperienceCommunity.SvgMediaDimensions</Product>
 		<VersionPrefix>1.0.0</VersionPrefix>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<Title>$(Product)</Title>
-		<PackageProjectUrl>https://github.com/wiredviews/xperience-page-builder-mode-tag-helper</PackageProjectUrl>
+		<PackageProjectUrl>https://github.com/wiredviews/xperience-page-builder-utilities</PackageProjectUrl>
 		<PackageIcon>wv-logo.png</PackageIcon>
-		<PackageTags>Kentico;Xperience;CMS;ASP.NET Core;Tag Helpers</PackageTags>
-		<PackageReleaseNotes>https://github.com/wiredviews/xperience-page-builder-mode-tag-helper/releases</PackageReleaseNotes>
+		<PackageTags>Kentico;Xperience;CMS;ASP.NET Core</PackageTags>
+		<PackageReleaseNotes>https://github.com/wiredviews/xperience-page-builder-utilities/releases</PackageReleaseNotes>
 	</PropertyGroup>
 
 	<PropertyGroup>

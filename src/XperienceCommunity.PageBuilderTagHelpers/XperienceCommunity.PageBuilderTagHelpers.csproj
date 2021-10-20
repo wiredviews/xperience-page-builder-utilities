@@ -9,6 +9,8 @@
     </Description>
 
     <Product>XperienceCommunity.PageBuilderTagHelpers</Product>
+    <Title>$(Product)</Title>
+    <PackageTags>$(PackageTags);Tag Helpers</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
