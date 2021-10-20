@@ -5,9 +5,10 @@ using FluentAssertions;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using NSubstitute;
+using XperienceCommunity.PageBuilderUtilities;
 using Xunit;
 
-namespace XperienceCommunity.PageBuilderModeTagHelper.Tests
+namespace XperienceCommunity.PageBuilderTagHelpers.Tests
 {
     public class PageBuilderModeTagHelperTests
     {
@@ -33,7 +34,7 @@ namespace XperienceCommunity.PageBuilderModeTagHelper.Tests
 
             var tagHelperContext = new TagHelperContext(
                 tagName: "page-builder-mode",
-                new TagHelperAttributeList{ { "include", modes } },
+                new TagHelperAttributeList { { "include", modes } },
                 new Dictionary<object, object>(),
                 Guid.NewGuid().ToString("N"));
 
@@ -72,7 +73,7 @@ namespace XperienceCommunity.PageBuilderModeTagHelper.Tests
 
             var tagHelperContext = new TagHelperContext(
                 tagName: "page-builder-mode",
-                new TagHelperAttributeList{ { "include", modes } },
+                new TagHelperAttributeList { { "include", modes } },
                 new Dictionary<object, object>(),
                 Guid.NewGuid().ToString("N"));
 
@@ -113,7 +114,7 @@ namespace XperienceCommunity.PageBuilderModeTagHelper.Tests
 
             var tagHelperContext = new TagHelperContext(
                 tagName: "page-builder-mode",
-                new TagHelperAttributeList{ { "include", include }, { "exclude", exclude } },
+                new TagHelperAttributeList { { "include", include }, { "exclude", exclude } },
                 new Dictionary<object, object>(),
                 Guid.NewGuid().ToString("N"));
 
@@ -153,7 +154,7 @@ namespace XperienceCommunity.PageBuilderModeTagHelper.Tests
 
             var tagHelperContext = new TagHelperContext(
                 tagName: "page-builder-mode",
-                new TagHelperAttributeList{ { "include", include }, { "exclude", exclude } },
+                new TagHelperAttributeList { { "include", include }, { "exclude", exclude } },
                 new Dictionary<object, object>(),
                 Guid.NewGuid().ToString("N"));
 

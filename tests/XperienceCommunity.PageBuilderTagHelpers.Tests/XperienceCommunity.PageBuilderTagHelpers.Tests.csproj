@@ -4,8 +4,6 @@
     <TargetFramework>net5.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
-
-    <RootNamespace>XperienceCommunity.PageBuilderModeTagHelper.Tests</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Xperience.PageBuilderModeTagHelper\Xperience.PageBuilderModeTagHelper.csproj" />
+    <ProjectReference Include="..\..\src\XperienceCommunity.PageBuilderTagHelpers\XperienceCommunity.PageBuilderTagHelpers.csproj" />
   </ItemGroup>
 
   <ItemGroup>

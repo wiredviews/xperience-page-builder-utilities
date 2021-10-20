@@ -2,12 +2,12 @@
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Microsoft.Extensions.Primitives;
 
-namespace XperienceCommunity.PageBuilderModeTagHelper
+namespace XperienceCommunity.PageBuilderUtilities
 {
     /// <summary>
     /// <see cref="ITagHelper"/> implementation targeting &lt;page-builder-mode&gt; elements that conditionally renders
-    /// content based on the current value of <see cref="IHostingEnvironment.EnvironmentName"/>.
-    /// If the environment is not listed in the specified <see cref="Modes"/> or <see cref="Include"/>, 
+    /// content based on the current value of <see cref="IPageBuilderContext.Mode"/>.
+    /// If the current Page Builder 'mode' is not listed in the specified <see cref="Include"/>, 
     /// or if it is in <see cref="Exclude"/>, the content will not be rendered.
     /// </summary>
     /// <remarks>
@@ -19,22 +19,20 @@ namespace XperienceCommunity.PageBuilderModeTagHelper
 
         private readonly IPageBuilderContext pageBuilderContext;
 
-        public PageBuilderModeTagHelper(IPageBuilderContext pageBuilderContext)
-        {
+        public PageBuilderModeTagHelper(IPageBuilderContext pageBuilderContext) =>
             this.pageBuilderContext = pageBuilderContext ?? throw new ArgumentNullException(nameof(pageBuilderContext));
-        }
 
         /// <inheritdoc />
         public override int Order => -999;
 
         /// <summary>
-        /// A comma separated list of page builder modes (Live,Edit,Preview) in which the content should be rendered.
+        /// A comma separated list of page builder modes (<see cref="PageBuilderMode" />) in which the content should be rendered.
         /// If the current mode is also in the <see cref="Exclude"/> list, the content will not be rendered.
         /// </summary>
         public string Include { get; set; } = "";
 
         /// <summary>
-        /// A comma separated list of page builder modes (Live,Edit,Preview) in which the content will not be rendered.
+        /// A comma separated list of page builder modes (<see cref="PageBuilderMode" />) in which the content will not be rendered.
         /// </summary>
         public string Exclude { get; set; } = "";
 
@@ -51,7 +49,7 @@ namespace XperienceCommunity.PageBuilderModeTagHelper
                 throw new ArgumentNullException(nameof(output));
             }
 
-            // Always strip the outer tag name as we never want <environment> to render
+            // Always strip the outer tag name as we never want <page-builder-mode> to render
             output.TagName = null;
 
             if (string.IsNullOrWhiteSpace(Include) && string.IsNullOrWhiteSpace(Exclude))

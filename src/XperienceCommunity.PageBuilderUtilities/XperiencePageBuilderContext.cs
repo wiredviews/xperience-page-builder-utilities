@@ -4,16 +4,14 @@ using Kentico.PageBuilder.Web.Mvc;
 using Kentico.Web.Mvc;
 using Microsoft.AspNetCore.Http;
 
-namespace XperienceCommunity.PageBuilderModeTagHelper
+namespace XperienceCommunity.PageBuilderUtilities
 {
     public class XperiencePageBuilderContext : IPageBuilderContext
     {
         private readonly IHttpContextAccessor accessor;
 
-        public XperiencePageBuilderContext(IHttpContextAccessor accessor)
-        {
+        public XperiencePageBuilderContext(IHttpContextAccessor accessor) =>
             this.accessor = accessor ?? throw new ArgumentNullException(nameof(accessor));
-        }
 
         /// <inheritdoc />
         public bool IsPreviewMode => accessor.HttpContext.Kentico().Preview().Enabled;
@@ -28,7 +26,7 @@ namespace XperienceCommunity.PageBuilderModeTagHelper
         public bool IsLiveMode => !IsPreviewMode;
 
         /// <inheritdoc />
-        public PageBuilderMode Mode => 
+        public PageBuilderMode Mode =>
             IsLiveMode
                 ? PageBuilderMode.Live
                 : IsLivePreviewMode

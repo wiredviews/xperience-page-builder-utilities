@@ -15,7 +15,7 @@
         "**/obj": true
     },
 
-    "omnisharp.defaultLaunchSolution": "Xperience.PageBuilderModeTagHelper.sln",
+    "omnisharp.defaultLaunchSolution": "XperienceCommunity.PageBuilderModeTagHelper.sln",
     "omnisharp.useEditorFormattingSettings": true,
     "omnisharp.enableImportCompletion": true
 }

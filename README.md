@@ -1,6 +1,6 @@
 # Xperience Page Builder Mode Tag Helper
 
-[![NuGet Package](https://img.shields.io/nuget/v/WiredViews.Xperience.PageBuilderModeTagHelper.svg)](https://www.nuget.org/packages/WiredViews.Xperience.PageBuilderModeTagHelper)
+[![NuGet Package](https://img.shields.io/nuget/v/XperienceCommunity.PageBuilderModeTagHelper.svg)](https://www.nuget.org/packages/XperienceCommunity.PageBuilderModeTagHelper)
 
 This library provides an [ASP.NET Core Tag Helper](https://docs.microsoft.com/en-US/aspnet/core/mvc/views/tag-helpers/intro?view=aspnetcore-3.1) for [Kentico Xperience 13.0](https://docs.xperience.io/developing-websites/developing-xperience-applications-using-asp-net-core/reference-xperience-tag-helpers) that adds to the existing set.
 
@@ -13,7 +13,7 @@ This package is compatible with ASP.NET Core 3.1 -> ASP.NET Core 5 and is design
 1. First, install the NuGet package in your ASP.NET Core project
 
     ```bash
-    dotnet add package WiredViews.Xperience.PageBuilderModeTagHelper
+    dotnet add package XperienceCommunity.PageBuilderModeTagHelper
     ```
 
 1. Add the required types to the DI container in your `Startup.cs` file

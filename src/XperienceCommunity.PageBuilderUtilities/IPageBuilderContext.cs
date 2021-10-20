@@ -1,7 +1,7 @@
-namespace XperienceCommunity.PageBuilderModeTagHelper
+namespace XperienceCommunity.PageBuilderUtilities
 {
     /// <summary>
-    /// Abstraction for the current request's page builder environment
+    /// Abstraction for the current request's Page Builder mode
     /// </summary>
     public interface IPageBuilderContext
     {

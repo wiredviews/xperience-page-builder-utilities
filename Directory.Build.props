@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<PropertyGroup>
+		<Company>WiredViews</Company>
+		<Authors>$(Company)</Authors>
+		<Copyright>Copyright © $(Company) $([System.DateTime]::Now.Year)</Copyright>
+		<Trademark>$(Company)™</Trademark>
+		<Product>XperienceCommunity.SvgMediaDimensions</Product>
+		<VersionPrefix>1.0.0</VersionPrefix>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<Title>$(Product)</Title>
+		<PackageProjectUrl>https://github.com/wiredviews/xperience-page-builder-mode-tag-helper</PackageProjectUrl>
+		<PackageIcon>wv-logo.png</PackageIcon>
+		<PackageTags>Kentico;Xperience;CMS;ASP.NET Core;Tag Helpers</PackageTags>
+		<PackageReleaseNotes>https://github.com/wiredviews/xperience-page-builder-mode-tag-helper/releases</PackageReleaseNotes>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<NoWarn>1591</NoWarn>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+		<PublishRepositoryUrl>true</PublishRepositoryUrl>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\..\images\wv-logo.png" Pack="true" Visible="false" PackagePath="" />
+	</ItemGroup>
+
+</Project>
