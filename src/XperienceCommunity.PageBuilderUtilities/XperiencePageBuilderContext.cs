@@ -14,13 +14,13 @@ namespace XperienceCommunity.PageBuilderUtilities
             this.accessor = accessor ?? throw new ArgumentNullException(nameof(accessor));
 
         /// <inheritdoc />
-        public bool IsPreviewMode => accessor.HttpContext.Kentico().Preview().Enabled;
+        public bool IsPreviewMode => accessor.HttpContext?.Kentico()?.Preview()?.Enabled ?? false;
 
         /// <inheritdoc />
         public bool IsLivePreviewMode => IsPreviewMode && !IsEditMode;
 
         /// <inheritdoc />
-        public bool IsEditMode => accessor.HttpContext.Kentico().PageBuilder().EditMode;
+        public bool IsEditMode => accessor.HttpContext?.Kentico()?.PageBuilder()?.EditMode ?? false;
 
         /// <inheritdoc />
         public bool IsLiveMode => !IsPreviewMode;

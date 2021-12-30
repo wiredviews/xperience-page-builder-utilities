@@ -34,7 +34,7 @@ namespace XperienceCommunity.PageBuilderTagHelpers.Tests
 
             var tagHelperContext = new TagHelperContext(
                 tagName: "page-builder-mode",
-                new TagHelperAttributeList { { "include", modes } },
+                new TagHelperAttributeList { },
                 new Dictionary<object, object>(),
                 Guid.NewGuid().ToString("N"));
 
@@ -73,7 +73,7 @@ namespace XperienceCommunity.PageBuilderTagHelpers.Tests
 
             var tagHelperContext = new TagHelperContext(
                 tagName: "page-builder-mode",
-                new TagHelperAttributeList { { "include", modes } },
+                new TagHelperAttributeList { },
                 new Dictionary<object, object>(),
                 Guid.NewGuid().ToString("N"));
 
@@ -114,7 +114,7 @@ namespace XperienceCommunity.PageBuilderTagHelpers.Tests
 
             var tagHelperContext = new TagHelperContext(
                 tagName: "page-builder-mode",
-                new TagHelperAttributeList { { "include", include }, { "exclude", exclude } },
+                new TagHelperAttributeList { },
                 new Dictionary<object, object>(),
                 Guid.NewGuid().ToString("N"));
 
@@ -154,7 +154,7 @@ namespace XperienceCommunity.PageBuilderTagHelpers.Tests
 
             var tagHelperContext = new TagHelperContext(
                 tagName: "page-builder-mode",
-                new TagHelperAttributeList { { "include", include }, { "exclude", exclude } },
+                new TagHelperAttributeList { },
                 new Dictionary<object, object>(),
                 Guid.NewGuid().ToString("N"));
 
