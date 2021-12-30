@@ -110,6 +110,16 @@ to help toggle HTML in Razor views based on the Page Builder 'mode' of the reque
      <!-- will be displayed in Edit and LivePreview modes -->
      <h1>Hello!</h1>
    </page-builder-mode>
+
+   <page-data-context> <!-- or <page-data-context initialized="true"> -->
+     <!-- will be displayed only if the IPageDataContext is popualted -->
+     <widget-zone />
+   </page-data-context>
+
+   <page-data-context initialized="false">
+     <!-- will be displayed only if the IPageDataContext is not populated -->
+     <div>widget placeholder!</div>
+   </page-data-context>
    ```
 
 ## References
