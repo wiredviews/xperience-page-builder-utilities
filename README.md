@@ -1,8 +1,10 @@
 # Xperience Page Builder Utilities
 
-[![NuGet Package](https://img.shields.io/nuget/v/XperienceCommunity.PageBuilderUtilities.svg)](https://www.nuget.org/packages/XperienceCommunity.PageBuilderUtilities)
+## Packages
 
-[![NuGet Package](https://img.shields.io/nuget/v/XperienceCommunity.PageBuilderTagHelpers.svg)](https://www.nuget.org/packages/XperienceCommunity.PageBuilderTagHelpers)
+- [![NuGet Package](https://img.shields.io/nuget/v/XperienceCommunity.PageBuilderUtilities.svg)](https://www.nuget.org/packages/XperienceCommunity.PageBuilderUtilities) **XperienceCommunity.PageBuilderUtilities**
+
+- [![NuGet Package](https://img.shields.io/nuget/v/XperienceCommunity.PageBuilderTagHelpers.svg)](https://www.nuget.org/packages/XperienceCommunity.PageBuilderTagHelpers) **XperienceCommunity.PageBuilderTagHelpers**
 
 ## Dependencies
 
