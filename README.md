@@ -1,8 +1,10 @@
 # Xperience Page Builder Utilities
 
-[![NuGet Package](https://img.shields.io/nuget/v/XperienceCommunity.PageBuilderUtilities.svg)](https://www.nuget.org/packages/XperienceCommunity.PageBuilderUtilities)
+## Packages
 
-[![NuGet Package](https://img.shields.io/nuget/v/XperienceCommunity.PageBuilderTagHelpers.svg)](https://www.nuget.org/packages/XperienceCommunity.PageBuilderTagHelpers)
+- [![NuGet Package](https://img.shields.io/nuget/v/XperienceCommunity.PageBuilderUtilities.svg)](https://www.nuget.org/packages/XperienceCommunity.PageBuilderUtilities) **XperienceCommunity.PageBuilderUtilities**
+
+- [![NuGet Package](https://img.shields.io/nuget/v/XperienceCommunity.PageBuilderTagHelpers.svg)](https://www.nuget.org/packages/XperienceCommunity.PageBuilderTagHelpers) **XperienceCommunity.PageBuilderTagHelpers**
 
 ## Dependencies
 
@@ -110,6 +112,16 @@ to help toggle HTML in Razor views based on the Page Builder 'mode' of the reque
      <!-- will be displayed in Edit and LivePreview modes -->
      <h1>Hello!</h1>
    </page-builder-mode>
+
+   <page-data-context> <!-- or <page-data-context initialized="true"> -->
+     <!-- will be displayed only if the IPageDataContext is popualted -->
+     <widget-zone />
+   </page-data-context>
+
+   <page-data-context initialized="false">
+     <!-- will be displayed only if the IPageDataContext is not populated -->
+     <div>widget placeholder!</div>
+   </page-data-context>
    ```
 
 ## References

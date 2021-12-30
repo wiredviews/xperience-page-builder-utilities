@@ -13,6 +13,7 @@ namespace XperienceCommunity.PageBuilderUtilities
     /// <remarks>
     /// Sourced from https://github.com/dotnet/aspnetcore/blob/v5.0.1/src/Mvc/Mvc.TagHelpers/src/EnvironmentTagHelper.cs
     /// </remarks>
+    [HtmlTargetElement("page-builder-mode")]
     public class PageBuilderModeTagHelper : TagHelper
     {
         private static readonly char[] nameSeparator = new[] { ',' };
@@ -39,12 +40,12 @@ namespace XperienceCommunity.PageBuilderUtilities
         /// <inheritdoc />
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
-            if (context == null)
+            if (context is null)
             {
                 throw new ArgumentNullException(nameof(context));
             }
 
-            if (output == null)
+            if (output is null)
             {
                 throw new ArgumentNullException(nameof(output));
             }
