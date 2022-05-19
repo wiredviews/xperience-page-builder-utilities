@@ -8,11 +8,11 @@
 
 ## Dependencies
 
-These libraries are compatible with ASP.NET Core 3.1 -> ASP.NET Core 5 and are designed to be used with the Xperience 13.0 Content Delivery (MVC) application [running on ASP.NET Core](https://docs.xperience.io/developing-websites/developing-xperience-applications-using-asp-net-core).
+These libraries are compatible with ASP.NET Core 3.1 -> ASP.NET Core 5 and are designed to be used with the Xperience 13.0 Content Delivery (MVC) application [running on ASP.NET Core](https://docs.xperience.io/x/BQ2RBg).
 
 ## Page Builder Utilities
 
-This library provides an abstraction over the Kentico Xperience Page Builder [rendering mode](https://docs.xperience.io/developing-websites/page-builder-development/creating-pages-with-editable-areas#Creatingpageswitheditableareas-Checkingforrenderingcontext) so that developers can conditionally execute code based on the mode of a given HTTP request to their ASP.NET Core application.
+This library provides an abstraction over the Kentico Xperience Page Builder [rendering mode](https://docs.xperience.io/x/QA2RBg#Creatingpageswitheditableareas-Checkingforrenderingcontext) so that developers can conditionally execute code based on the mode of a given HTTP request to their ASP.NET Core application.
 
 ### How to Use?
 
@@ -22,7 +22,7 @@ This library provides an abstraction over the Kentico Xperience Page Builder [re
    dotnet add package XperienceCommunity.PageBuilderUtilities
    ```
 
-1. Add the required types to the DI container in your `Startup.cs` file
+1. Add the required types to the DI container in your project's `Startup.cs` file
 
    ```csharp
    public void ConfigureServices(IServiceCollection services)
@@ -31,7 +31,7 @@ This library provides an abstraction over the Kentico Xperience Page Builder [re
    }
    ```
 
-1. You can now use the `IPageBuilderContext` from `XperienceCommunity.PageBuilderUtilities` as a constructor dependency anywhere in your application to more easily determine the state of the current request:
+1. You can now use the `IPageBuilderContext` interface (available in the `XperienceCommunity.PageBuilderUtilities` namespace) as a constructor dependency anywhere in your application to more easily determine the state of the current request:
 
     ```csharp
     public class ProductsController
@@ -72,7 +72,7 @@ This library provides an abstraction over the Kentico Xperience Page Builder [re
 
 ## Page Builder Tag Helpers
 
-This library provides an [ASP.NET Core Tag Helper](https://docs.microsoft.com/en-US/aspnet/core/mvc/views/tag-helpers/intro?view=aspnetcore-3.1) for [Kentico Xperience 13.0](https://docs.xperience.io/developing-websites/developing-xperience-applications-using-asp-net-core/reference-xperience-tag-helpers)
+This library provides an [ASP.NET Core Tag Helper](https://docs.microsoft.com/en-US/aspnet/core/mvc/views/tag-helpers/intro?view=aspnetcore-3.1) for [Kentico Xperience 13.0](https://docs.xperience.io/x/bYHaBg)
 to help toggle HTML in Razor views based on the Page Builder 'mode' of the request to the ASP.NET Core application.
 
 ### How to Use?
@@ -139,4 +139,4 @@ to help toggle HTML in Razor views based on the Page Builder 'mode' of the reque
 
 ### Kentico Xperience
 
-- [Using Xperience 13.0 Built-in Tag Helpers](https://docs.xperience.io/developing-websites/developing-xperience-applications-using-asp-net-core/reference-xperience-tag-helpers)
+- [Using Xperience 13.0 Built-in Tag Helpers](https://docs.xperience.io/x/bYHaBg)
