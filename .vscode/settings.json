@@ -1,21 +1,39 @@
 {
-    "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/CVS": true,
-        "**/.DS_Store": true
-    },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true
+  },
 
-    "search.exclude": {
-        "**/node_modules": true,
-        "**/bower_components": true,
-        "**/*.code-search": true,
-        "**/bin": true,
-        "**/obj": true
-    },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true,
+    "**/bin": true,
+    "**/obj": true
+  },
 
-    "omnisharp.defaultLaunchSolution": "XperienceCommunity.PageBuilderModeTagHelper.sln",
-    "omnisharp.useEditorFormattingSettings": true,
-    "omnisharp.enableImportCompletion": true
+  "editor.formatOnSave": true,
+
+  "[csharp]": {
+    "editor.semanticHighlighting.enabled": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true,
+      "source.organizeImports": true
+    }
+  },
+
+  "[razor]": {
+    "editor.semanticHighlighting.enabled": true,
+    "editor.defaultFormatter": "ms-dotnettools.csharp"
+  },
+
+  "omnisharp.defaultLaunchSolution": "XperienceCommunity.PageBuilderTagHelpers.sln",
+  "omnisharp.organizeImportsOnFormat": true,
+  "omnisharp.useEditorFormattingSettings": true,
+  "omnisharp.enableEditorConfigSupport": true,
+  "omnisharp.enableImportCompletion": true,
+  "omnisharp.useModernNet": true
 }
