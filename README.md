@@ -2,13 +2,13 @@
 
 ## Packages
 
-- [![NuGet Package](https://img.shields.io/nuget/v/XperienceCommunity.PageBuilderUtilities.svg)](https://www.nuget.org/packages/XperienceCommunity.PageBuilderUtilities) **XperienceCommunity.PageBuilderUtilities**
+- [![NuGet Package](https://img.shields.io/nuget/v/XperienceCommunity.PageBuilderUtilities.svg)](https://www.nuget.org/packages/XperienceCommunity.PageBuilderUtilities)
 
-- [![NuGet Package](https://img.shields.io/nuget/v/XperienceCommunity.PageBuilderTagHelpers.svg)](https://www.nuget.org/packages/XperienceCommunity.PageBuilderTagHelpers) **XperienceCommunity.PageBuilderTagHelpers**
+- [![NuGet Package](https://img.shields.io/nuget/v/XperienceCommunity.PageBuilderTagHelpers.svg)](https://www.nuget.org/packages/XperienceCommunity.PageBuilderTagHelpers)
 
 ## Dependencies
 
-These libraries are compatible with ASP.NET Core 3.1 -> ASP.NET Core 5 and are designed to be used with the Xperience 13.0 Content Delivery (MVC) application [running on ASP.NET Core](https://docs.xperience.io/x/BQ2RBg).
+These libraries are compatible with ASP.NET Core 3.1 -> ASP.NET Core 6 and are designed to be used with the Xperience 13.0 Content Delivery (MVC) application [running on ASP.NET Core](https://docs.xperience.io/x/BQ2RBg).
 
 ## Page Builder Utilities
 
@@ -33,38 +33,38 @@ This library provides an abstraction over the Kentico Xperience Page Builder [re
 
 1. You can now use the `IPageBuilderContext` interface (available in the `XperienceCommunity.PageBuilderUtilities` namespace) as a constructor dependency anywhere in your application to more easily determine the state of the current request:
 
-    ```csharp
-    public class ProductsController
-    {
-        private readonly IPageBuilderContext context;
+   ```csharp
+   public class ProductsController
+   {
+       private readonly IPageBuilderContext context;
 
-        public ProductsController(IPageBuilderContext context) =>
-            this.context = context;
+       public ProductsController(IPageBuilderContext context) =>
+           this.context = context;
 
-        public ActionResult Index()
-        {
-            if (context.IsEditMode)
-            {
-                // ...
-            }
+       public ActionResult Index()
+       {
+           if (context.IsEditMode)
+           {
+               // ...
+           }
 
-            if (context.IsLivePreviewMode)
-            {
-                // ...
-            }
+           if (context.IsLivePreviewMode)
+           {
+               // ...
+           }
 
-            if (context.IsLiveMode)
-            {
-                // ...
-            }
+           if (context.IsLiveMode)
+           {
+               // ...
+           }
 
-            if (context.IsPreviewMode)
-            {
-                // ...
-            }
-        }
-    }
-    ```
+           if (context.IsPreviewMode)
+           {
+               // ...
+           }
+       }
+   }
+   ```
 
 1. By not using `IHttpContextAccessor` and all the Kentico Xperience extension methods, your code is both easier to unit test and read.
 
@@ -113,7 +113,8 @@ to help toggle HTML in Razor views based on the Page Builder 'mode' of the reque
      <h1>Hello!</h1>
    </page-builder-mode>
 
-   <page-data-context> <!-- or <page-data-context initialized="true"> -->
+   <page-data-context>
+     <!-- or <page-data-context initialized="true"> -->
      <!-- will be displayed only if the IPageDataContext is popualted -->
      <widget-zone />
    </page-data-context>
@@ -124,6 +125,15 @@ to help toggle HTML in Razor views based on the Page Builder 'mode' of the reque
    </page-data-context>
    ```
 
+## Contributing
+
+To build this project, you must have v6.0.300 or higher
+of the [.NET SDK](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) installed.
+
+If you've found a bug or have a feature request, please [open an issue](https://github.com/wiredviews/xperience-page-builder-utilities/issues/new) on GitHub.
+
+If you'd like to make a contribution, you can create a [PR on GitHub](https://github.com/wiredviews/xperience-page-builder-utilities/compare).
+
 ## References
 
 ### Real World Examples
@@ -133,8 +143,8 @@ to help toggle HTML in Razor views based on the Page Builder 'mode' of the reque
 
 ### ASP.NET Core
 
-- [Using Tag Helpers](https://docs.microsoft.com/en-US/aspnet/core/mvc/views/tag-helpers/intro?view=aspnetcore-3.1)
-- [Authoring Tag Helpers](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/authoring?view=aspnetcore-5.0)
+- [Using Tag Helpers](https://docs.microsoft.com/en-US/aspnet/core/mvc/views/tag-helpers/intro?view=aspnetcore-6.0)
+- [Authoring Tag Helpers](https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/authoring?view=aspnetcore-6.0)
 - [ASP.NET Core - Environment Tag Helper (source)](https://github.com/dotnet/aspnetcore/blob/v5.0.1/src/Mvc/Mvc.TagHelpers/src/EnvironmentTagHelper.cs)
 
 ### Kentico Xperience

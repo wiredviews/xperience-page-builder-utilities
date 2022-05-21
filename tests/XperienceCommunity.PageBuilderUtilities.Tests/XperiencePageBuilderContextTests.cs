@@ -35,7 +35,7 @@ namespace XperienceCommunity.PageBuilderTagHelpers.Tests
             var accessor = Substitute.For<IHttpContextAccessor>();
 
             var http = Substitute.For<HttpContext>();
-            http.Items = new Dictionary<object, object>
+            http.Items = new Dictionary<object, object?>
             {
                 { "Kentico.Features", null }
             };
@@ -55,7 +55,7 @@ namespace XperienceCommunity.PageBuilderTagHelpers.Tests
             kenticoFeature.GetFeature<IPreviewFeature>().ReturnsNull();
 
             var http = Substitute.For<HttpContext>();
-            http.Items = new Dictionary<object, object>
+            http.Items = new Dictionary<object, object?>
             {
                 { "Kentico.Features", kenticoFeature }
             };
@@ -77,7 +77,7 @@ namespace XperienceCommunity.PageBuilderTagHelpers.Tests
             kenticoFeature.GetFeature<IPreviewFeature>().Returns(previewFeature);
 
             var http = Substitute.For<HttpContext>();
-            http.Items = new Dictionary<object, object>
+            http.Items = new Dictionary<object, object?>
             {
                 { "Kentico.Features", kenticoFeature }
             };
@@ -99,7 +99,7 @@ namespace XperienceCommunity.PageBuilderTagHelpers.Tests
             kenticoFeature.GetFeature<IPreviewFeature>().Returns(previewFeature);
 
             var http = Substitute.For<HttpContext>();
-            http.Items = new Dictionary<object, object>
+            http.Items = new Dictionary<object, object?>
             {
                 { "Kentico.Features", kenticoFeature }
             };
@@ -133,7 +133,7 @@ namespace XperienceCommunity.PageBuilderTagHelpers.Tests
             kenticoFeature.GetFeature<IPageBuilderFeature>().Returns(pageBuilderFeature);
 
             var http = Substitute.For<HttpContext>();
-            http.Items = new Dictionary<object, object>
+            http.Items = new Dictionary<object, object?>
             {
                 { "Kentico.Features", kenticoFeature }
             };
@@ -155,7 +155,7 @@ namespace XperienceCommunity.PageBuilderTagHelpers.Tests
             kenticoFeature.GetFeature<IPageBuilderFeature>().Returns(pageBuilderFeature);
 
             var http = Substitute.For<HttpContext>();
-            http.Items = new Dictionary<object, object>
+            http.Items = new Dictionary<object, object?>
             {
                 { "Kentico.Features", kenticoFeature }
             };
@@ -185,7 +185,7 @@ namespace XperienceCommunity.PageBuilderTagHelpers.Tests
             kenticoFeature.GetFeature<IPreviewFeature>().Returns(previewFeature);
 
             var http = Substitute.For<HttpContext>();
-            http.Items = new Dictionary<object, object>
+            http.Items = new Dictionary<object, object?>
             {
                 { "Kentico.Features", kenticoFeature }
             };
@@ -210,7 +210,7 @@ namespace XperienceCommunity.PageBuilderTagHelpers.Tests
             kenticoFeature.GetFeature<IPreviewFeature>().Returns(previewFeature);
 
             var http = Substitute.For<HttpContext>();
-            http.Items = new Dictionary<object, object>
+            http.Items = new Dictionary<object, object?>
             {
                 { "Kentico.Features", kenticoFeature }
             };
@@ -235,7 +235,7 @@ namespace XperienceCommunity.PageBuilderTagHelpers.Tests
             kenticoFeature.GetFeature<IPreviewFeature>().Returns(previewFeature);
 
             var http = Substitute.For<HttpContext>();
-            http.Items = new Dictionary<object, object>
+            http.Items = new Dictionary<object, object?>
             {
                 { "Kentico.Features", kenticoFeature }
             };
@@ -260,7 +260,7 @@ namespace XperienceCommunity.PageBuilderTagHelpers.Tests
             kenticoFeature.GetFeature<IPreviewFeature>().Returns(previewFeature);
 
             var http = Substitute.For<HttpContext>();
-            http.Items = new Dictionary<object, object>
+            http.Items = new Dictionary<object, object?>
             {
                 { "Kentico.Features", kenticoFeature }
             };

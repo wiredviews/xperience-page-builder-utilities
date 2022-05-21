@@ -2,7 +2,7 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
 	<PropertyGroup>
-		<Company>WiredViews</Company>
+		<Company>WiredViews, LLC</Company>
 		<Authors>$(Company)</Authors>
 		<Copyright>Copyright © $(Company) $([System.DateTime]::Now.Year)</Copyright>
 		<Trademark>$(Company)™</Trademark>
@@ -10,6 +10,7 @@
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageProjectUrl>https://github.com/wiredviews/xperience-page-builder-utilities</PackageProjectUrl>
 		<PackageIcon>wv-logo.png</PackageIcon>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageTags>Kentico;Xperience;CMS;ASP.NET Core</PackageTags>
 		<PackageReleaseNotes>https://github.com/wiredviews/xperience-page-builder-utilities/releases</PackageReleaseNotes>
 	</PropertyGroup>
@@ -17,9 +18,10 @@
 	<PropertyGroup>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 		<NoWarn>1591</NoWarn>
+		<Nullable>enable</Nullable>
 	</PropertyGroup>
 
-	<PropertyGroup>
+	<PropertyGroup Condition=" $(Configuration) == 'Release' ">
 		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
 		<PublishRepositoryUrl>true</PublishRepositoryUrl>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
@@ -28,7 +30,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<None Include="..\..\images\wv-logo.png" Pack="true" Visible="false" PackagePath="" />
+		<None Include="$(MSBuildThisFileDirectory)\images\wv-logo.png" Pack="true" Visible="false" PackagePath="" />
+		<None Include="$(MSBuildThisFileDirectory)\README.md" Pack="true" PackagePath=""/>
 	</ItemGroup>
 
 </Project>
