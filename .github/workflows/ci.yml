@@ -1,0 +1,46 @@
+name: 'CI: Build and Test'
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+    - '**.cs'
+    - '**.csproj'
+    - '**.props'
+    - '**.targets'
+    - '**.sln'
+  pull_request:
+    branches: [ main ]
+    paths:
+    - '**.cs'
+    - '**.csproj'
+    - '**.props'
+    - '**.targets'
+    - '**.sln'
+
+jobs:
+  build:
+
+    name: build
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set Environment Variables
+      uses: ./.github/actions/set-env
+
+    - uses: actions/checkout@v2
+
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: ${{ env.DOTNET_SDK_VERSION }}
+
+    - name: Install dependencies
+      run: dotnet restore
+      
+    - name: Build Solution
+      run: dotnet build --configuration Release --no-restore
+
+    - name: Test Solution
+      run: dotnet test --configuration Release --no-build --no-restore
